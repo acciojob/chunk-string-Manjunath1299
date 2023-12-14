@@ -1,26 +1,20 @@
 function stringChop(str, size) {
-  // your code here
-	let newstr=[],str1='',c=1;
-	if(!str)
-		return [];
-	else if{
+  if (str === null) {
+    return [];
+  }
 
-		for(let i=0;i<str.length;i++){
-			if(count<=size){
-				str1+=str[i];
-			}
-			else if(count==size){
-				newstr.push(str1);
-				str1='';
-				c=1;
-			}
-		}
-	}
-	return newstr
-	
+  const chunks = [];
+  let i = 0;
+
+  while (i < str.length) {
+    chunks.push(str.substr(i, size));
+    i += size;
+  }
+
+  return chunks;
 }
 
 // Do not change the code below
-// const str = prompt("Enter String.");
-// const size = prompt("Enter Chunk Size.");
+const str = prompt("Enter String.");
+const size = prompt("Enter Chunk Size.");
 alert(stringChop(str, size));
